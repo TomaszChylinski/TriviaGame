@@ -61,4 +61,10 @@ var gameQuestions = [
   }
 ];
 
-$(document).ready(() => {});
+$(document).ready(() => {
+
+console.log('the questions ' , gameQuestions)
+
+
+
+});
