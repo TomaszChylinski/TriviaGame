@@ -16,11 +16,19 @@
 var correctGuess = 0;
 var incorrectsGuess = 0;
 var unanswered = 0;
+var currentQuestion;
+var correctAnswer;
+var incorrectAnswer;
+var unanswered;
+var seconds;
+var time;
+var answered;
+var userSelect;
 var timer;
 
 var gameQuestions = [
   {
-    question: "Most Wins In The Premier League?",
+    questionTitle: "Most Wins In The Premier League?",
     answers: [
       "Liverpool FC",
       "Leeds United",
@@ -31,13 +39,13 @@ var gameQuestions = [
   },
 
   {
-    question: "Top Scorer Of The Premier League?",
+    questionTitle: "Top Scorer Of The Premier League?",
     answers: ["Thierry Henry", "Didier Drogba", "Alan Shearer", "Wayne Rooney"],
     correctAnswer: 2
   },
 
   {
-    question: "Most Defeats In The Premier League?",
+    questionTitle: "Most Defeats In The Premier League?",
     answers: [
       "Newcastle United",
       "Sunderland AFC",
@@ -47,17 +55,29 @@ var gameQuestions = [
     correctAnswer: 3
   },
   {
-    question: "Most Premier League Apperances?",
+    questionTitle: "Most Premier League Apperances?",
     answers: ["Gareth Barry", "Ryan Giggs", "Frank Lampard", "James Milner"],
     correctAnswer: 0
   }
 ];
-console.log(" questions " , gameQuestions);
 
-$(document).ready(() => {
-  $(".startGame").click(function() {
-    for (i = 0; i < gameQuestions.length; i++) {
-      console.log("the questions " + gameQuestions[i].question[i]);
-    }
-  });
-});
+for (var i = 0; i < gameQuestions.length; i++) {
+ 
+  //get question titles 
+  var titleTopic = gameQuestions[i].questionTitle; 
+  console.log('Topic: ' + titleTopic)
+
+  //get answers to the questions 
+  var answers = gameQuestions[i].answers;
+  console.log('Answers: ' + answers)
+
+  //get correct answers 
+  var correctAnswer = gameQuestions[i].correctAnswer;
+  console.log('Correct Answer: ' + correctAnswer)
+
+ 
+  
+  
+}
+
+
