@@ -1,90 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Trivia Game</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h2><center>Premier League Trivia</center></h2>
-          <div class="gameSection">
-            <button type="button" class="startGame btn btn-primary">
-              Start Game
-            </button>
 
-            <div>
-              <h2>Time Remaninig: <span id="timer-display"> </span></h2>
-            </div>
-            <div id="quiz">
-              <div id="question">
-                  <form>
-                      <label>Most Wins In The Premier League?</label>
-                      <br>
-                      <input type="radio" id="radio" name="answer1" value="beaver"> Beaver
-                      <br>
-                      <input type="radio" id="radio" name="answer1" value="moose"> Moose
-                      <br>
-                      <input type="radio" id="radio" name="answer1" value="goose"> Goose
-                      <br>
-                      <input type="radio" id="radio" name="answer1" value="polarBear"> Polar Bear
-                      <br>
-                      <br>
-                      <label>Top Scorer Of The Premier League?</label>
-                      <br>
-                      <input type="radio" id="radio" name="answer2" value="rugby"> Rugby
-                      <br>
-                      <input type="radio" id="radio" name="answer2" value="curling"> Curling
-                      <br>
-                      <input type="radio" id="radio" name="answer2" value="lacrosse"> Lacrosse
-                      <br>
-                      <input type="radio" id="radio" name="answer2" value="baseball"> Baseball
-                      <br>
-                      <br>
-                      <label>Most Defeats In The Premier League?</label>
-                      <br>
-                      <input type="radio" id="radio" name="answer3" value="12"> 12
-                      <br>
-                      <input type="radio" id="radio" name="answer3" value="10"> 10
-                      <br>
-                      <input type="radio" id="radio" name="answer3" value="24"> 24
-                      <br>
-                      <input type="radio" id="radio" name="answer3" value="18"> 18
-                      <br>
-                      <br>
-                      <label>Most Premier League Apperances?</label>
-                      <br>
-                      <input type="radio" id="radio" name="answer4" value="french"> French
-                      <br>
-                      <input type="radio" id="radio" name="answer4" value="spanish"> Spanish
-                      <br>
-                      <input type="radio" id="radio" name="answer4" value="portuguese"> Portuguese
-                      <br>
-                      <input type="radio" id="radio" name="answer4" value="mandarin"> Mandarin
-      
-                  </form>
-                  <br>
-              </div>
-              <button id="done">Restart</button>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Trivia Game</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2>
+          <center>Premier League Trivia</center>
+        </h2>
+        <div class="gameSection">
+          <button id="startGame" type="button" class=" btn btn-primary">
+            Start Game
+          </button>
+
+          <div id="timer">
+            <h2>Time Remaninig: <span id="countdown"> </span></h2>
           </div>
+          <div id="quiz">
+            <div id="question">
+              <form>
+                <label>Most Wins In The Premier League?</label>
+                <br />
+                <input type="radio" id="radio" name="answer1" value="liverpool" />
+                Liverpool FC
+                <br />
+                <input type="radio" id="radio" name="answer1" value="leeds" />
+                Leeds United
+                <br />
+                <input type="radio" id="radio" name="answer1" value="manu" />
+                Manchester United
+                <br />
+                <input type="radio" id="radio" name="answer1" value="arsenal" />
+                Arsenal FC
+
+
+                <br />
+                <br />
+                <label>Top Scorer Of The Premier League?</label>
+                <br />
+                <input type="radio" id="radio" name="answer2" value="henry" />
+                Thierry Henry
+                <br />
+                <input type="radio" id="radio" name="answer2" value="drogba" />
+                Didier Drogba
+                <br />
+                <input type="radio" id="radio" name="answer2" value="shearer" />
+                Alan Shearer
+                <br />
+                <input type="radio" id="radio" name="answer2" value="rooney" />
+                Wayne Rooney
+      
+
+
+                <br />
+                <br />
+                <label>Most Defeats In The Premier League?</label>
+                <br />
+                <input type="radio" id="radio" name="answer3" value="newcastle" /> Newcastle United
+                <br />
+                <input type="radio" id="radio" name="answer3" value="sunderland" /> Sunderland AFC
+                <br />
+                <input type="radio" id="radio" name="answer3" value="blackburn" /> Blackburn Rovers
+                <br />
+                <input type="radio" id="radio" name="answer3" value="everton" /> Everton FC
+
+       
+
+                <br />
+                <br />
+                <label>Most Premier League Apperances?</label>
+                <br />
+                <input type="radio" id="radio" name="answer4" value="french" />
+                Gareth Barry
+                <br />
+                <input type="radio" id="radio" name="answer4" value="spanish" />
+                Ryan Giggs
+                <br />
+                <input type="radio" id="radio" name="answer4" value="portuguese" />
+                Frank Lampard
+                <br />
+                <input type="radio" id="radio" name="answer4" value="mandarin" />
+                James Milner
+              </form>
+              <br />
+            </div>
+            <button id="done">Restart</button>
           </div>
         </div>
-        <div class="col-md-3"></div>
       </div>
+      <div class="col-md-3"></div>
     </div>
-  </body>
+  </div>
+</body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="assets/javascript/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/javascript/app.js"></script>
+
 </html>

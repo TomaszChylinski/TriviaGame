@@ -20,12 +20,14 @@ var currentQuestion;
 var correctAnswer;
 var incorrectAnswer;
 var unanswered;
-var seconds;
 var time;
 var answered;
 var userSelect;
-var timer;
 
+//user has 300 seconds
+var countdown = 300;
+
+/* Working on a different approach 
 var gameQuestions = [
   {
     questionTitle: "Most Wins In The Premier League?",
@@ -74,10 +76,25 @@ for (var i = 0; i < gameQuestions.length; i++) {
   //get correct answers 
   var correctAnswer = gameQuestions[i].correctAnswer;
   console.log('Correct Answer: ' + correctAnswer)
-
- 
-  
-  
 }
+*/
 
+$(document).ready(function() {
+  $("#quiz, #questions, #timer").hide();
 
+  function startGame() {
+    $("#startGame").click(function() {
+      $("#quiz, #questions, #timer").show();
+      $("#startGame").hide();
+      timer()
+    });
+  }
+  startGame()
+
+  function timer() {
+    var startTimer = setInterval(function() {
+      countdown--;
+      $("#countdown").html(countdown + " Seconds Left");
+    }, 1000);
+  }
+});
