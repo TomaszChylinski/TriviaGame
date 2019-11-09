@@ -17,54 +17,47 @@ var correctGuess = 0;
 var incorrectsGuess = 0;
 var unanswered = 0;
 var timer;
+
 var gameQuestions = [
   {
     question: "Most Wins In The Premier League?",
-    answers: {
-      a: "Liverpool FC",
-      b: "Leeds United",
-      c: "Manchester United",
-      d: "Arsenal FC"
-    },
-    correctAnswer: "c"
+    answers: [
+      "Liverpool FC",
+      "Leeds United",
+      "Manchester United",
+      "Arsenal FC"
+    ],
+    correctAnswer: 2
   },
 
   {
     question: "Top Scorer Of The Premier League?",
-    answers: {
-      a: "Thierry Henry",
-      b: "Didier Drogba",
-      c: "Alan Shearer",
-      d: "Wayne Rooney"
-    },
-    correctAnswer: "c"
+    answers: ["Thierry Henry", "Didier Drogba", "Alan Shearer", "Wayne Rooney"],
+    correctAnswer: 2
   },
 
   {
     question: "Most Defeats In The Premier League?",
-    answers: {
-      a: "Newcastle United",
-      b: "Sunderland AFC",
-      c: "Blackburn Rovers",
-      d: "Everton FC"
-    },
-    correctAnswer: "d"
+    answers: [
+      "Newcastle United",
+      "Sunderland AFC",
+      "Blackburn Rovers",
+      "Everton FC"
+    ],
+    correctAnswer: 3
   },
   {
     question: "Most Premier League Apperances?",
-    answers: {
-      a: "Gareth Barry",
-      b: "Ryan Giggs",
-      c: "Frank Lampard",
-      d: "James Milner"
-    }
+    answers: ["Gareth Barry", "Ryan Giggs", "Frank Lampard", "James Milner"],
+    correctAnswer: 0
   }
 ];
+console.log(" questions " , gameQuestions);
 
 $(document).ready(() => {
-
-console.log('the questions ' , gameQuestions)
-
-
-
+  $(".startGame").click(function() {
+    for (i = 0; i < gameQuestions.length; i++) {
+      console.log("the questions " + gameQuestions[i].question[i]);
+    }
+  });
 });
