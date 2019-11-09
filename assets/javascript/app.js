@@ -23,7 +23,9 @@ var unanswered;
 var time;
 var answered;
 var userSelect;
-
+var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
+var userSelection = $("input");
+var totalQuestions = 4;
 //user has 300 seconds
 var countdown = 300;
 
@@ -97,4 +99,46 @@ $(document).ready(function() {
       $("#countdown").html(countdown + " Seconds Left");
     }, 1000);
   }
+
+//scoreCount will be triggered when "submit is hit"
+  function scoreCount() {
+    for (var i = 0; i < userSelection.length; i++) {
+
+        // If user selected an answer
+        if (userSelection[i].checked) {
+
+            // check if what the user select is equal to the array answers
+
+            if (answers.indexOf(userSelection[i].value) !== -1) {
+                correctAnswer++;
+            } else {
+                incorrectAnswer++;
+            }
+        }
+    }
+    //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
+    
+    var totalAnswered = correctAnswer + incorrectAnswer;
+    console.log(totalAnswered);
+    if (totalAnswered !== totalQuestions) {
+        blank = totalQuestions - totalAnswered;
+    }
+
+    $('#correct').html(" " + correctAnswer);
+    $('#incorrect').html(" " + incorrectAnswer);
+    $("#blank").html(" " + blank);
+
+} //end scoreCount
+
+
+
+$("#submit").click(function() {
+//  $("#quiz, #timer").hide("slow");
+ // $("#results").show("slow");
+  //clearInterval(timer);
+  scoreCount();
+});
+
+
+
 });
