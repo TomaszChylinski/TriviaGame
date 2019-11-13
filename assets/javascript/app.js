@@ -66,21 +66,16 @@ for (var i = 0; i < gameQuestions.length; i++) {
 */
 
 $(document).ready(function() {
+  //hide my sections until user clicks start
   $("#quiz, #questions, #timer, #results").hide();
 
-  var correctAnswer;
-  var incorrectAnswer;
+  var correctAnswer = 0;
+  var incorrectAnswer = 0;
   var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
   var userSelection = $("input");
   var totalQuestions = 4;
   var countdown = 30;
   
-
-
-//hide my sections until user clicks start
-
-
-
 //scoreCount will be triggered when "submit is hit"
 function scoreCount() {
   for (var i = 0; i < userSelection.length; i++) {
@@ -99,8 +94,8 @@ function scoreCount() {
   }
   //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
   
-  var totalAnswered = correctAnswer + incorrectAnswer;
-  console.log(totalAnswered);
+  var totalAnswered =  correctAnswer + incorrectAnswer;
+
   if (totalAnswered !== totalQuestions) {
       blank = totalQuestions - totalAnswered;
   }
