@@ -13,22 +13,6 @@
 //on final screen show correct answers, incorrects answers and option to restart game (without reloading the page)
 //
 
-var correctGuess = 0;
-var incorrectsGuess = 0;
-var unanswered = 0;
-var currentQuestion;
-var correctAnswer;
-var incorrectAnswer;
-var unanswered;
-var time;
-var answered;
-var userSelect;
-var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
-var userSelection = $("input");
-var totalQuestions = 4;
-//user has 300 seconds
-var countdown = 300;
-
 /* Working on a different approach 
 var gameQuestions = [
   {
@@ -82,7 +66,50 @@ for (var i = 0; i < gameQuestions.length; i++) {
 */
 
 $(document).ready(function() {
-  $("#quiz, #questions, #timer").hide();
+
+
+  var correctAnswer;
+  var incorrectAnswer;
+  var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
+  var userSelection = $("input");
+  var totalQuestions = 4;
+  var countdown = 300;
+  
+
+
+//hide my sections until user clicks start
+
+$("#quiz","#questions", "#timer").hide();
+
+//scoreCount will be triggered when "submit is hit"
+function scoreCount() {
+  for (var i = 0; i < userSelection.length; i++) {
+
+      // If user selected an answer
+      if (userSelection[i].checked) {
+
+          // check if what the user select is equal to the array answers
+
+          if (answers.indexOf(userSelection[i].value) !== -1) {
+              correctAnswer++;
+          } else {
+              incorrectAnswer++;
+          }
+      }
+  }
+  //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
+  
+  var totalAnswered = correctAnswer + incorrectAnswer;
+  console.log(totalAnswered);
+  if (totalAnswered !== totalQuestions) {
+      blank = totalQuestions - totalAnswered;
+  }
+
+  $('#correct').html(" " + correctAnswer);
+  $('#incorrect').html(" " + incorrectAnswer);
+  $("#blank").html(" " + blank);
+
+} //end scoreCount
 
   function startGame() {
     $("#startGame").click(function() {
@@ -97,48 +124,29 @@ $(document).ready(function() {
     var startTimer = setInterval(function() {
       countdown--;
       $("#countdown").html(countdown + " Seconds Left");
+
+      //if countdown reaches 0 reset 
+            if (countdown === 0) {
+                clearInterval(timer);
+                $("#quiz, #timer").hide("slow");
+                $("#results").show("slow");
+                scoreCount();
+            }
     }, 1000);
   }
 
-//scoreCount will be triggered when "submit is hit"
-  function scoreCount() {
-    for (var i = 0; i < userSelection.length; i++) {
-
-        // If user selected an answer
-        if (userSelection[i].checked) {
-
-            // check if what the user select is equal to the array answers
-
-            if (answers.indexOf(userSelection[i].value) !== -1) {
-                correctAnswer++;
-            } else {
-                incorrectAnswer++;
-            }
-        }
-    }
-    //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
-    
-    var totalAnswered = correctAnswer + incorrectAnswer;
-    console.log(totalAnswered);
-    if (totalAnswered !== totalQuestions) {
-        blank = totalQuestions - totalAnswered;
-    }
-
-    $('#correct').html(" " + correctAnswer);
-    $('#incorrect').html(" " + incorrectAnswer);
-    $("#blank").html(" " + blank);
-
-} //end scoreCount
-
-
-
 $("#submit").click(function() {
-//  $("#quiz, #timer").hide("slow");
- // $("#results").show("slow");
-  //clearInterval(timer);
+ $("#quiz, #timer").hide("slow");
+  $("#results").show("slow");
+  clearInterval(timer);
   scoreCount();
 });
 
 
+    //restart button refreshes page back to start screen//
+
+    $("#restart").click(function() {
+      location.reload();
+  });
 
 });
