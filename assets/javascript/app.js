@@ -71,77 +71,77 @@ $(document).ready(function() {
 
   var correctAnswer = 0;
   var incorrectAnswer = 0;
-  var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
+  var answers = [
+    "Manchester United",
+    "Alan Shearer",
+    "Everton FC",
+    "Gareth Barry"
+  ];
   var userSelection = $("input");
   var totalQuestions = 4;
   var countdown = 30;
-  
-//scoreCount will be triggered when "submit is hit"
-function scoreCount() {
-  for (var i = 0; i < userSelection.length; i++) {
 
+  //scoreCount will be triggered when "submit is hit"
+  function scoreCount() {
+    for (var i = 0; i < userSelection.length; i++) {
       // If user selected an answer
       if (userSelection[i].checked) {
+        // check if what the user select is equal to the array answers
 
-          // check if what the user select is equal to the array answers
-
-          if (answers.indexOf(userSelection[i].value) !== -1) {
-              correctAnswer++;
-          } else {
-              incorrectAnswer++;
-          }
+        if (answers.indexOf(userSelection[i].value) !== -1) {
+          correctAnswer++;
+        } else {
+          incorrectAnswer++;
+        }
       }
-  }
-  //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
-  
-  var totalAnswered =  correctAnswer + incorrectAnswer;
+    }
+    //check how many questions were blank by subtracting the if/else values from above from the total number of questions.
 
-  if (totalAnswered !== totalQuestions) {
+    var totalAnswered = correctAnswer + incorrectAnswer;
+
+    if (totalAnswered !== totalQuestions) {
       blank = totalQuestions - totalAnswered;
-  }
+    }
 
-  $('#correct').html(" " + correctAnswer);
-  $('#incorrect').html(" " + incorrectAnswer);
-  $("#blank").html(" " + blank);
-
-} //end scoreCount
+    $("#correct").html(" " + correctAnswer);
+    $("#incorrect").html(" " + incorrectAnswer);
+    $("#blank").html(" " + blank);
+  } //end scoreCount
 
   function startGame() {
     $("#startGame").click(function() {
       $("#quiz, #questions, #timer").show();
       $("#startGame").hide();
-      timer()
+      timer();
     });
   }
-  startGame()
+  startGame();
 
   function timer() {
     var startTimer = setInterval(function() {
       countdown--;
       $("#countdown").html(countdown + " Seconds Left");
 
-      //if countdown reaches 0 reset 
-            if (countdown === 0) {
-                clearInterval(timer);
-                $("#quiz, #timer").hide("slow");
-                $("#results").show("slow");
-                scoreCount();
-            }
+      //if countdown reaches 0 reset
+      if (countdown === 0) {
+        clearInterval(timer);
+        $("#quiz, #timer").hide("slow");
+        $("#results").show("slow");
+        scoreCount();
+      }
     }, 1000);
   }
 
-$("#submit").click(function() {
- $("#quiz, #timer").hide("slow");
-  $("#results").show();
-  clearInterval(timer);
-  scoreCount();
-});
-
-
-    //restart button refreshes page back to start screen//
-
-    $("#tryAgain").click(function() {
-      location.reload();
+  $("#submit").click(function() {
+    $("#quiz, #timer").hide("slow");
+    $("#results").show();
+    clearInterval(timer);
+    scoreCount();
   });
 
+  //restart button refreshes page back to start screen//
+
+  $("#tryAgain").click(function() {
+    location.reload();
+  });
 });
