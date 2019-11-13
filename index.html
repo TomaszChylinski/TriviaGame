@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
   <link rel="stylesheet" href="assets/css/styles.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +22,9 @@
           <center>Premier League Trivia</center>
         </h2>
         <div class="gameSection">
-          <button id="startGame" type="button" class=" btn btn-primary">
+         <h1>  <center> <button id="startGame" type="button" class=" btn btn-primary">
             Start Game
-          </button>
+          </button>    </center> </h1>
 
           <div id="timer">
             <h2>Time Remaninig: <span id="countdown"> </span></h2>
@@ -44,7 +46,6 @@
                 <input type="radio" id="radio" name="answer1" value="arsenal" />
                 Arsenal FC
 
-
                 <br />
                 <br />
                 <label>Top Scorer Of The Premier League?</label>
@@ -61,21 +62,21 @@
                 <input type="radio" id="radio" name="answer2" value="rooney" />
                 Wayne Rooney
 
-
-
                 <br />
                 <br />
                 <label>Most Defeats In The Premier League?</label>
                 <br />
-                <input type="radio" id="radio" name="answer3" value="newcastle" /> Newcastle United
+                <input type="radio" id="radio" name="answer3" value="newcastle" />
+                Newcastle United
                 <br />
-                <input type="radio" id="radio" name="answer3" value="sunderland" /> Sunderland AFC
+                <input type="radio" id="radio" name="answer3" value="sunderland" />
+                Sunderland AFC
                 <br />
-                <input type="radio" id="radio" name="answer3" value="blackburn" /> Blackburn Rovers
+                <input type="radio" id="radio" name="answer3" value="blackburn" />
+                Blackburn Rovers
                 <br />
-                <input type="radio" id="radio" name="answer3" value="everton" /> Everton FC
-
-
+                <input type="radio" id="radio" name="answer3" value="everton" />
+                Everton FC
 
                 <br />
                 <br />
@@ -95,18 +96,15 @@
               </form>
               <br />
 
-
               <button id="submit">Submit</button>
-       
             </div>
-            <div id="results">
-              <h2>RESULTS</h2>
-              <p>Correct: <span id=correct></span></p>
-              <p>Incorrect: <span id=incorrect></span></p>
-              <p>Missed: <span id=blank></span></p>
-              <button id="restart">Try Again</button>
-            </div>
-
+          </div>
+          <div id="results">
+            <h2>RESULTS</h2>
+            <p>Correct: <span id="correct"></span></p>
+            <p>Incorrect: <span id="incorrect"></span></p>
+            <p>Missed: <span id="blank"></span></p>
+            <button id="tryAgain">Try Again</button>
           </div>
         </div>
       </div>

@@ -66,20 +66,20 @@ for (var i = 0; i < gameQuestions.length; i++) {
 */
 
 $(document).ready(function() {
-
+  $("#quiz, #questions, #timer, #results").hide();
 
   var correctAnswer;
   var incorrectAnswer;
   var answers = ["Manchester United", "Alan Shearer", "Everton FC", "Gareth Barry"]
   var userSelection = $("input");
   var totalQuestions = 4;
-  var countdown = 300;
+  var countdown = 30;
   
 
 
 //hide my sections until user clicks start
 
-$("#quiz","#questions", "#timer").hide();
+
 
 //scoreCount will be triggered when "submit is hit"
 function scoreCount() {
@@ -137,7 +137,7 @@ function scoreCount() {
 
 $("#submit").click(function() {
  $("#quiz, #timer").hide("slow");
-  $("#results").show("slow");
+  $("#results").show();
   clearInterval(timer);
   scoreCount();
 });
@@ -145,7 +145,7 @@ $("#submit").click(function() {
 
     //restart button refreshes page back to start screen//
 
-    $("#restart").click(function() {
+    $("#tryAgain").click(function() {
       location.reload();
   });
 
