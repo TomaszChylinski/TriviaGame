@@ -15,101 +15,103 @@
 
 <body>
   <div class="container">
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <h2>
-          <center>Premier League Trivia</center>
-        </h2>
-        <div class="gameSection">
-         <h1>  <center> <button id="startGame" type="button" class=" btn btn-primary">
-            Start Game
-          </button>    </center> </h1>
+    <center>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h1>
+           <u> Premier League Trivia</u>
+          </h1>
+          <div class="gameSection">
+            <button id="startGame" type="button" class="btn btn-primary">
+              Start Game
+            </button>
 
-          <div id="timer">
-            <h2>Time Remaninig: <span id="countdown"> </span></h2>
-          </div>
-          <div id="quiz">
-            <div id="question">
-              <form>
-                <label>Most Wins In The Premier League?</label>
-                <br />
-                <input type="radio" id="radio" name="answer1" value="liverpool" />
-                Liverpool FC
-                <br />
-                <input type="radio" id="radio" name="answer1" value="leeds" />
-                Leeds United
-                <br />
-                <input type="radio" id="radio" name="answer1" value="manu" />
-                Manchester United
-                <br />
-                <input type="radio" id="radio" name="answer1" value="arsenal" />
-                Arsenal FC
+            <div id="timer">
+              <h2>Time Remaninig: <span id="countdown"> </span></h2>
+            </div>
+            <div id="quiz">
+              <div id="question">
+                <form>
+                  <label>Most Wins In The Premier League?</label>
+                  <br />
+                  <input type="radio" id="radio" name="answer1" value="liverpool" />
+                  Liverpool FC
+                  <br />
+                  <input type="radio" id="radio" name="answer1" value="leeds" />
+                  Leeds United
+                  <br />
+                  <input type="radio" id="radio" name="answer1" value="manu" />
+                  Manchester United
+                  <br />
+                  <input type="radio" id="radio" name="answer1" value="arsenal" />
+                  Arsenal FC
 
-                <br />
-                <br />
-                <label>Top Scorer Of The Premier League?</label>
-                <br />
-                <input type="radio" id="radio" name="answer2" value="henry" />
-                Thierry Henry
-                <br />
-                <input type="radio" id="radio" name="answer2" value="drogba" />
-                Didier Drogba
-                <br />
-                <input type="radio" id="radio" name="answer2" value="shearer" />
-                Alan Shearer
-                <br />
-                <input type="radio" id="radio" name="answer2" value="rooney" />
-                Wayne Rooney
+                  <br />
+                  <br />
+                  <label>Top Scorer Of The Premier League?</label>
+                  <br />
+                  <input type="radio" id="radio" name="answer2" value="henry" />
+                  Thierry Henry
+                  <br />
+                  <input type="radio" id="radio" name="answer2" value="drogba" />
+                  Didier Drogba
+                  <br />
+                  <input type="radio" id="radio" name="answer2" value="shearer" />
+                  Alan Shearer
+                  <br />
+                  <input type="radio" id="radio" name="answer2" value="rooney" />
+                  Wayne Rooney
 
-                <br />
-                <br />
-                <label>Most Defeats In The Premier League?</label>
-                <br />
-                <input type="radio" id="radio" name="answer3" value="newcastle" />
-                Newcastle United
-                <br />
-                <input type="radio" id="radio" name="answer3" value="sunderland" />
-                Sunderland AFC
-                <br />
-                <input type="radio" id="radio" name="answer3" value="blackburn" />
-                Blackburn Rovers
-                <br />
-                <input type="radio" id="radio" name="answer3" value="everton" />
-                Everton FC
+                  <br />
+                  <br />
+                  <label>Most Defeats In The Premier League?</label>
+                  <br />
+                  <input type="radio" id="radio" name="answer3" value="newcastle" />
+                  Newcastle United
+                  <br />
+                  <input type="radio" id="radio" name="answer3" value="sunderland" />
+                  Sunderland AFC
+                  <br />
+                  <input type="radio" id="radio" name="answer3" value="blackburn" />
+                  Blackburn Rovers
+                  <br />
+                  <input type="radio" id="radio" name="answer3" value="everton" />
+                  Everton FC
 
+                  <br />
+                  <br />
+                  <label>Most Premier League Apperances?</label>
+                  <br />
+                  <input type="radio" id="radio" name="answer4" value="french" />
+                  Gareth Barry
+                  <br />
+                  <input type="radio" id="radio" name="answer4" value="spanish" />
+                  Ryan Giggs
+                  <br />
+                  <input type="radio" id="radio" name="answer4" value="portuguese" />
+                  Frank Lampard
+                  <br />
+                  <input type="radio" id="radio" name="answer4" value="mandarin" />
+                  James Milner
+                </form>
                 <br />
-                <br />
-                <label>Most Premier League Apperances?</label>
-                <br />
-                <input type="radio" id="radio" name="answer4" value="french" />
-                Gareth Barry
-                <br />
-                <input type="radio" id="radio" name="answer4" value="spanish" />
-                Ryan Giggs
-                <br />
-                <input type="radio" id="radio" name="answer4" value="portuguese" />
-                Frank Lampard
-                <br />
-                <input type="radio" id="radio" name="answer4" value="mandarin" />
-                James Milner
-              </form>
-              <br />
 
-              <button id="submit">Submit</button>
+                <button class="btn btn-success" id="submit">Submit</button>
+              </div>
+            </div>
+            <div id="results">
+              <h2>RESULTS</h2>
+              <p>Correct: <span id="correct"></span></p>
+              <p>Incorrect: <span id="incorrect"></span></p>
+              <p>Missed: <span id="blank"></span></p>
+              <button class="btn btn-primary" id="tryAgain">Try Again</button>
             </div>
           </div>
-          <div id="results">
-            <h2>RESULTS</h2>
-            <p>Correct: <span id="correct"></span></p>
-            <p>Incorrect: <span id="incorrect"></span></p>
-            <p>Missed: <span id="blank"></span></p>
-            <button id="tryAgain">Try Again</button>
-          </div>
         </div>
+        <div class="col-md-3"></div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
+    </center>
   </div>
 </body>
 
